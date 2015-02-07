@@ -1,4 +1,4 @@
-#Greedy solution supporting rotation, no exact matches, original problem in NP
+#Greedy solution supporting rotation and boxception, no exact matches, original problem suspected in NP
 
 from itertools import permutations
 from copy import deepcopy
