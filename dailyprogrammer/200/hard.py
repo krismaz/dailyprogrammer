@@ -1,9 +1,14 @@
 #Greedy solution supporting rotation, no exact matches, original problem in NP
 
 from itertools import permutations
+from copy import deepcopy
+from random import shuffle
+
+boxCeption = False #Boooooo!!!
 
 boxes = []
 stacked = []
+filled = []
 
 def  boxify(s): #Take a 3-dimensional scratchpad and revert to box
 	return (len(s), len(s[0]), len(s[0][0]))
@@ -52,24 +57,38 @@ while True:
 	except:
 		break
 
-done = False
+done, lmax, best, reps, old = False, -1, None, 10, (stacked, boxes)
 
-while True: #Keep trying to fit more boxs
-	updates = []
-	for stack in stacked:
-		for box in boxes:
-			fs = [(p, fits(p, stack)) for p in permutations(box) if fits(p, stack)] #Rotations!
-			if len(fs) > 0:
-				rot, fit = fs[0]
-				put(box, rot, stack, fit)
-				print("Insert box {} into {} at {} rotated to {}".format(box, boxify(stack), fit, rot)) #Sanity
-				updates.append(box)
-	if len(updates) == 0:
-		break
-	for b in updates: #Put box in the stackable pile
-		boxes.remove(b)
-		stacked.append(stackify(b))
+for _ in range(reps):
+	stacked, boxes = deepcopy(old)
+	filled = []
+	desc = []
+	shuffle(boxes)
+	while True: #Keep trying to fit more boxs
+		updates = []
+		for stack in stacked:
+			for box in boxes:
+				fs = [(p, fits(p, stack)) for p in permutations(box) if fits(p, stack)] #Rotations!
+				if len(fs) > 0:
+					rot, fit = fs[0]
+					put(box, rot, stack, fit)
+					desc.append("Insert box {} into {} at {} rotated to {}".format(box, boxify(stack), fit, rot)) #Sanity
+					updates.append(box)
+		if len(updates) == 0:
+			break
+		for b in updates: #Put box in the stackable pile
+			boxes.remove(b)
+			filled.append(b)
+			if boxCeption:
+				stacked.append(stackify(b))
+	if len(filled) > lmax:
+		lmax, best = len(filled), (filled, desc)
 
-print("Filled {} boxes into the {} {} {}:".format(len(stacked)-1, *boxify(stacked[0])) ) #Output wooo
-for stack in stacked[1:]:
-	print(boxify(stack))
+filled, desc = best
+
+print("\n".join(desc))
+
+print("===========================================================================")
+print("Filled {} boxes into the {} {} {}:".format(len(filled), *boxify(stacked[0])) ) #Output wooo
+for b in filled:
+	print(b)
