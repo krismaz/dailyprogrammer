@@ -27,11 +27,11 @@ def fits(b, s):#Determine if a given box fits inside a scratchpad
 								good = False
 				if good:
 					return(x, y, z) #\o/ it fits
+	if b == (1,1,1):
+		print(b, s)
 	return False
 
-def put(b, rot, s, pos,  bl, sl): #Take a rotated box fit, and update our state
-	bl.remove(b)
-	sl.append(stackify(b))
+def put(b, rot, s, pos): #Take a rotated box fit, and update our state
 	px, py, pz = pos
 	bx, by, bz = rot
 	for x in range(px, px+bx):
@@ -54,16 +54,21 @@ while True:
 
 done = False
 
-while not done: #Keep trying to fit more boxs
-	done = True
+while True: #Keep trying to fit more boxs
+	updates = []
 	for stack in stacked:
 		for box in boxes:
 			fs = [(p, fits(p, stack)) for p in permutations(box) if fits(p, stack)] #Rotations!
 			if len(fs) > 0:
 				rot, fit = fs[0]
-				put(box, rot, stack, fit, boxes, stacked)
+				put(box, rot, stack, fit)
 				print("Insert box {} into {} at {} rotated to {}".format(box, boxify(stack), fit, rot)) #Sanity
-				done = False
+				updates.append(box)
+	if len(updates) == 0:
+		break
+	for b in updates: #Put box in the stackable pile
+		boxes.remove(b)
+		stacked.append(stackify(b))
 
 print("Filled {} boxes into the {} {} {}:".format(len(stacked)-1, *boxify(stacked[0])) ) #Output wooo
 for stack in stacked[1:]:
