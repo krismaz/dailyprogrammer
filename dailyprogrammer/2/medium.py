@@ -1,4 +1,4 @@
-#I really didn't have the imiganination to make some grand grame of this.
+#I really didn't have the imaginination to make some grand game of this.
 
 #Glorious game map
 game = '''\
