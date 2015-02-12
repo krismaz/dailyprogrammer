@@ -1,5 +1,3 @@
-ninf = float('-inf')
-
 class FibNode(object):
 	def __init__(self, k, v):
 		self.v = v
@@ -142,15 +140,30 @@ class FibHeap(object):
 				parent.mark = True
 
 	def remove(self, node):
-		self.decreaseKey(node, ninf)
+		self.decreaseKey(node, float('-inf'))
 		self.Dequeue()
 
-class ABFibHeap:
+
+
+class ABFibHeap(object):
 	def __init__(self):
 		self.A = FibHeap()
 		self.B = FibHeap()
 		self.T = FibHeap()
 		self.time = 0
+
+	def __len__(self):
+		return len(self.A)
+
+	def Count(self):
+		return len(self)
+
+	def Clear(self):
+		self.A.Clear()
+		self.B.Clear()
+
+	def  __bool__(self):
+		return bool(self.A)
 
 	def Enqueue(self, v, kA, kB):
 		self.time += 1
@@ -179,21 +192,6 @@ class ABFibHeap:
 		self.A.remove(nA)
 		self.B.remove(nB)
 		return nA.v
-
-
-	def __len__(self):
-		return len(self.A)
-
-	def Count(self):
-		return len(self)
-
-	def Clear(self):
-		self.A.Clear()
-		self.B.Clear()
-
-
-	def  __bool__(self):
-		return bool(self.A)
 
 
 heap = ABFibHeap()
