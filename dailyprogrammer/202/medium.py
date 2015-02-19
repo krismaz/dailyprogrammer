@@ -1,3 +1,5 @@
+#Knuth algorithm, strange and not pretty
+
 def easter(y):
 	g = y%19 + 1
 	c = y//100 + 1
