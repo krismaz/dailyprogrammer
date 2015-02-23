@@ -48,7 +48,7 @@ while True:
 		break
 	except:
 		pass
-	for d in direction:
+	for d in sorted(direction):
 		s = names[-1] #Void
 		dx, dy, dname = direction[d]
 		try:

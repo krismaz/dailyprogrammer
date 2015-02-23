@@ -1,0 +1,20 @@
+Ur naem?=    =    =
+Krismaz is standing in a house
+To the east Krismaz sees a plain
+To the north Krismaz sees a lake
+To the south Krismaz sees a plain
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz is standing in a plain
+To the east Krismaz sees a plain
+To the north Krismaz sees a house
+To the south Krismaz sees a plain
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz is standing in a plain
+To the east Krismaz sees a plain
+To the north Krismaz sees a plain
+To the south Krismaz sees the dark void
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz falls of the edge of the world. Krismaz dies.

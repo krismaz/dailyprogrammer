@@ -1,0 +1,8 @@
+add 07 john
+add 09 jack
+show
+edit jack 03 pete
+show
+remove pete
+show
+exit

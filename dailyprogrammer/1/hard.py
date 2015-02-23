@@ -5,7 +5,7 @@ import random
 line, low, high = '', 0, 100
 
 while not line == 'r':
-	num = sorted([random.choice(range(low, high+1)) for i in range(5)])[2]
+	num = sorted([random.choice(range(low, high+1)) for i in range(5)])[2] #Random, no test case for this one
 	line = input("I guess {}\n".format(num))
 	if line == 'h':
 		high = num - 1

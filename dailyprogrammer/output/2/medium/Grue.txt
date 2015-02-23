@@ -1,0 +1,15 @@
+Ur naem?=    =    =
+Krismaz is standing in a house
+To the east Krismaz sees a plain
+To the north Krismaz sees a lake
+To the south Krismaz sees a plain
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz is standing in a plain
+To the east Krismaz sees a house
+To the north Krismaz sees a forest
+To the south Krismaz sees a plain
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz is standing in a forest
+The forest is dark. Krismaz is eaten by a grue. Krismaz dies.

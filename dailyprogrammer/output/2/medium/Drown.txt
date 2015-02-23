@@ -1,0 +1,9 @@
+Ur naem?=    =    =
+Krismaz is standing in a house
+To the east Krismaz sees a plain
+To the north Krismaz sees a lake
+To the south Krismaz sees a plain
+To the west Krismaz sees a plain
+Where do you go?=    =    =
+Krismaz is standing in a lake
+Krismaz cannot swim. Krismaz drowns. Krismaz dies.

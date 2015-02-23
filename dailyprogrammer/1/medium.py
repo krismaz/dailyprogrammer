@@ -65,7 +65,7 @@ def edit(match):
 
 
 commands = {r'add ([0-9]{1,2}) ([a-zA-Z]+)' : add,
-			r'remove ([a-zA-Z]+)' : add,
+			r'remove ([a-zA-Z]+)' : remove,
 			r'edit ([a-zA-Z]+) ([0-9]{1,2}) ([a-zA-Z]+)': edit,
 			r'load ([a-zA-Z]+)':load,
 			r'options': showOptions,

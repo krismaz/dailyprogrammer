@@ -17,5 +17,10 @@ def decrypt(s, n):
 	return ''.join(key(n)[ascii_letters.index(c)] for c in s)
 
 
-print(decrypt(encrypt('Krismaz', 7),7))
-print(encrypt(encrypt('Krismaz', 13),13))
+op, text, n = input().split()
+if op == 'e':
+	print(encrypt(text, int(n)))
+elif op == 'd':
+	print(decrypt(text, int(n)))
+else:
+	print('Unknown option, use "d/e text n"')
