@@ -12,5 +12,11 @@ def encrypt(s, key = skey, alphabet = printable):
 def decrypt(s, key = skey, alphabet = printable):
 	return ''.join(key[alphabet.index(c)] for c in s)
 
-print(decrypt(encrypt('Krismaz')))
+op, text = input().split()
+if op == 'e':
+	print(encrypt(text))
+elif op == 'd':
+	print(decrypt(text))
+else:
+	print('Unknown option, use "d/e text n"')
 
