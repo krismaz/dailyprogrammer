@@ -6,7 +6,7 @@ from random import *
 m = hashlib.sha512()
 
 user = input('Username:')
-pw = input('password:')
+pw = input('Password:')
 
 m.update(bytes(user + '##' + pw, 'utf8')) 
 

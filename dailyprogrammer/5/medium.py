@@ -12,6 +12,7 @@ for line in content:
 		word = word.strip(punctuation) #Sometimes Python3 makes things a little too easy
 		lookup[''.join(sorted(word.strip().lower()))].add(word.strip().lower()) #Plain old scrabble-bot
 
-for v in lookup.values():
+for k in sorted(lookup):
+	v = lookup[k]
 	if len(v)-1: #len >=2
-		print(*v)
+		print(*sorted(v))

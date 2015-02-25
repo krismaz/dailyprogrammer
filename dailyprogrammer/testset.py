@@ -11,4 +11,6 @@ tests = [
 	(4, 'easy', []), #Random password generator, no way to match
 	(4, 'medium', ['AddSubtract', 'Multiply', 'Divide', 'Pow', 'Parens', 'Big']), #Calculator
 	(4, 'hard', ['Base', 'Three', 'Four']), #Equality matching
+	(5, 'easy',['True', 'False']), #Password protection
+	(5, 'medium', ['Dream'])
 	]
