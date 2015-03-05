@@ -1,4 +1,4 @@
-#O(N) solution. It's handy, but slow. Use recursion (10 -> 02) for speed.
+#O(n log n) solution. It's handy, but slow. Use recursion (10 -> 02) for speed.
 
 from itertools import product
 from math import log2, ceil
