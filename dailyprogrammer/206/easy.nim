@@ -1,3 +1,4 @@
+#Nim 10.2
 import strutils
 var 
   relation = readLine(stdin)
