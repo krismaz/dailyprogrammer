@@ -1,4 +1,2 @@
 5Hard - Pirate fighting game... meh
-6Easy - On hold until Nim gets better support for rationals/bigints
-6Medium - WTF... mby, mark for delete?
 207Hard - What am I supposed to do? Which what why? Input output example?
