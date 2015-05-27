@@ -20,4 +20,4 @@ def ppn(i):
 			return pre + nn[i//10]
 	return nn2[i]
 
-print(ppn(input()))
+print(ppn(int(input())))
