@@ -1,10 +1,11 @@
-#It looks kind of strange, due to formating being entirely space based, but this makes more sense in terms of special cases
+#Yes, searching a big space was, as I suspected the easiest way to do this. Luckily, the code was rather straight-forward, and some pruning could be done easily.
+#It much faster than I would have expected from python search
 
+#This is taken from 8 medium
 nn = ["","", "twenty", "thirty","fourty","fifty", "sixty","seventy", "eighty","ninety"]
 nn2 = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
 
 def ppn(i):
-
 	if i > 999999999:
 		return("A lot")
 	if i > 999999:
@@ -20,4 +21,15 @@ def ppn(i):
 			return nn[i//10]
 	return nn2[i]
 
-print(ppn(int(input())))
+
+#Here begins the real code
+def anagram(s1, s2):
+	return list(sorted(s1)) == list(sorted(s2))#Angranams
+
+nmax = 30
+
+for i in range(1,nmax):
+	for j in range(i,nmax):#Prune
+		for k in range(i,(i+j)//2):#Pruuuuune
+			if i!=k and j!=k and anagram(ppn(i)+ppn(j), ppn(k)+ppn(i+j-k)):
+				print('{} + {} = {} + {}'.format(i,j,k,i+j-k))
