@@ -7,6 +7,7 @@ var
 
 template TL (op:expr): expr {.immediate} =
   (x :int, y :int) => op(x, y)
+  
 var lookup = {'+': `+`.TL, '-': `-`.TL, '*': `*`.TL, '/': `div`.TL }.toTable
 
 for i in 0 .. n:
